@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="gcL-2z-wqe">
+                                <rect key="frame" x="0.0" y="64" width="320" height="548"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="5fR-Qm-542"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="ddL-PD-L76"/>
+                                </connections>
+                            </tableView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bSq-3E-17f">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="hXN-NO-wdK"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem id="ZWg-Mc-bmo">
+                                        <barButtonItem key="leftBarButtonItem" title="Touch Me" id="5MW-nA-lBx" userLabel="Touch Me">
+                                            <connections>
+                                                <action selector="onClickSlect:" destination="BYZ-38-t0r" id="YAg-Vb-6Mh"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="bSq-3E-17f" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="5K0-BA-VDm"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="bSq-3E-17f" secondAttribute="trailing" constant="-16" id="BAO-T0-vPP"/>
+                            <constraint firstItem="bSq-3E-17f" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="DUh-hW-UMf"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="gcL-2z-wqe" secondAttribute="trailing" constant="-16" id="Dah-re-msn"/>
+                            <constraint firstItem="gcL-2z-wqe" firstAttribute="top" secondItem="bSq-3E-17f" secondAttribute="bottom" id="hSI-rw-bpd"/>
+                            <constraint firstItem="gcL-2z-wqe" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="iRM-iM-BC0"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="gcL-2z-wqe" secondAttribute="bottom" constant="-44" id="qEY-c5-wNK"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="naviBar" destination="bSq-3E-17f" id="6MJ-MN-gBI"/>
+                        <outlet property="tableView" destination="gcL-2z-wqe" id="PmK-TW-aBV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="147.19999999999999" y="172.29333333333332"/>
+        </scene>
+    </scenes>
+</document>

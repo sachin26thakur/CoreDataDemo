@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		039B90E71BE09F9300FBAFD3 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 039B90E61BE09F9300FBAFD3 /* .gitignore */; };
 		74D506B61C0DCE6E004DE9C2 /* STOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 74D506B51C0DCE6E004DE9C2 /* STOperation.m */; };
-		74D506B91C0DD05E004DE9C2 /* STAppManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 74D506B81C0DD05E004DE9C2 /* STAppManager.m */; };
 		74D506C61C0ECCBC004DE9C2 /* CoreDataAddOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 74D506C31C0ECCBC004DE9C2 /* CoreDataAddOperation.m */; };
 		74D506C71C0ECCBC004DE9C2 /* CoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 74D506C51C0ECCBC004DE9C2 /* CoreDataManager.m */; };
 		74D506CB1C0ECEA0004DE9C2 /* CoreDataOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 74D506CA1C0ECEA0004DE9C2 /* CoreDataOperation.m */; };
@@ -41,8 +40,6 @@
 		039B90E61BE09F9300FBAFD3 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		74D506B41C0DCE6E004DE9C2 /* STOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STOperation.h; sourceTree = "<group>"; };
 		74D506B51C0DCE6E004DE9C2 /* STOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STOperation.m; sourceTree = "<group>"; };
-		74D506B71C0DD05E004DE9C2 /* STAppManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STAppManager.h; sourceTree = "<group>"; };
-		74D506B81C0DD05E004DE9C2 /* STAppManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STAppManager.m; sourceTree = "<group>"; };
 		74D506BD1C0ECBC1004DE9C2 /* CoreData_Multiple_Context.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreData_Multiple_Context.pch; sourceTree = "<group>"; };
 		74D506C21C0ECCBC004DE9C2 /* CoreDataAddOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataAddOperation.h; sourceTree = "<group>"; };
 		74D506C31C0ECCBC004DE9C2 /* CoreDataAddOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataAddOperation.m; sourceTree = "<group>"; };
@@ -141,8 +138,6 @@
 			children = (
 				7436AAF81C0FFBE900841E0C /* CSVReader */,
 				74D506C81C0ECCC1004DE9C2 /* CoreDataFiles */,
-				74D506B71C0DD05E004DE9C2 /* STAppManager.h */,
-				74D506B81C0DD05E004DE9C2 /* STAppManager.m */,
 				74D506B41C0DCE6E004DE9C2 /* STOperation.h */,
 				74D506B51C0DCE6E004DE9C2 /* STOperation.m */,
 				BC5AE84B1BDF4F1900FCDA39 /* AppDelegate.h */,
@@ -290,7 +285,6 @@
 			files = (
 				74D506B61C0DCE6E004DE9C2 /* STOperation.m in Sources */,
 				74D506CE1C0F00EE004DE9C2 /* CoreDataFetchOperation.m in Sources */,
-				74D506B91C0DD05E004DE9C2 /* STAppManager.m in Sources */,
 				74D506C71C0ECCBC004DE9C2 /* CoreDataManager.m in Sources */,
 				BC49BD911BE25F18003ECCE2 /* ViewController.m in Sources */,
 				74D506CB1C0ECEA0004DE9C2 /* CoreDataOperation.m in Sources */,

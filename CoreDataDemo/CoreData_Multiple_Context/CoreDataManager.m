@@ -7,11 +7,16 @@
 //
 
 #import "CoreDataManager.h"
+#import "CSVReaderOperation.h"
+#import "CoreDataAddOperation.h"
+
+
 static CoreDataManager * uniqueInstance;
 
 
 @interface CoreDataManager ()
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
+@property (nonatomic,strong) NSOperationQueue *operationQueue;
 @end
 
 
@@ -27,9 +32,56 @@ static CoreDataManager * uniqueInstance;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         uniqueInstance = [[CoreDataManager alloc]init];
+        [uniqueInstance initialize];
     });
     return uniqueInstance;
 }
+
+
+- (void)resumeOperation:(NSOperation*)operation{
+    if (self.operationQueue == nil) {
+        self.operationQueue = [[NSOperationQueue alloc] init];
+    }
+    [self.operationQueue addOperation:operation];
+}
+
+
+
+- (void)initialize{
+    
+    //Intialize CoreData
+    NSString *csvPath = [[NSBundle mainBundle] pathForResource:@"sampleRecords" ofType:@"csv"];
+    ;
+    
+    //read data from csv reader
+    CSVReaderOperation *csvReaderOperation = [[CSVReaderOperation alloc] initWithCSVFilePath:csvPath];
+    [csvReaderOperation setFinishedBlock:^(id obj, NSError *error) {
+        if (error == nil) {
+            [self addRecordInDataBase:obj index:0];
+        }
+    }];
+    
+    [self.operationQueue addOperation:csvReaderOperation];
+}
+
+
+- (void)addRecordInDataBase:(NSArray*)dataArray index:(NSInteger)index{
+    if (index>=[dataArray count]) {
+        return;
+    }
+    NSDictionary *dict = [dataArray objectAtIndex:index++];
+    CoreDataAddOperation *coreDataAddOperation = [[CoreDataAddOperation alloc] initWithContextType:CHILD_CONTEXT_TYPE and:dict];
+    
+    [coreDataAddOperation setFinishedBlock:^(id obj, NSError *error) {
+        [self addRecordInDataBase:dataArray index:index];
+    }];
+    
+    [self.operationQueue addOperation:coreDataAddOperation];
+}
+
+
+
+
 
 
 #pragma mark - Core Data Operation

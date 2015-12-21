@@ -19,5 +19,6 @@
 @property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 - (NSURL *)applicationDocumentsDirectory;
 +(instancetype)sharedCoreDataManager;
+- (void)resumeOperation:(NSOperation*)operation;
 
 @end

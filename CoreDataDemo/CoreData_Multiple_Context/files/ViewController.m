@@ -9,8 +9,9 @@
 #import "ViewController.h"
 #import "CoreDataManager.h"
 #import "CSVReaderOperation.h"
-#import "STAppManager.h"
+
 #import "CoreDataFetchOperation.h"
+#import "CoreDataAddOperation.h"
 
 
 @interface ViewController ()
@@ -37,6 +38,9 @@
     selectedRecordsIndexpath = [[NSMutableArray alloc]init];
     selectedRecordsID = [[NSMutableArray alloc]init];
     
+    
+    //Fetch Operation
+    
     CoreDataFetchOperation *fetchOperation = [[CoreDataFetchOperation alloc] initWithContextType:PARENT_CONTEXT_TYPE];
     
     [fetchOperation setFinishedBlock:^(id obj, NSError *error) {
@@ -45,15 +49,18 @@
         [self.tableView reloadData];
     }];
     
-    [[[STAppManager sharedCoreDataManager] operationQueue] addOperation:fetchOperation];
-
+    [[CoreDataManager sharedCoreDataManager] resumeOperation:fetchOperation];
+    
+    
+    
+    //Add opeation
+    
+    
 }
 
 
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-    //intialize operation
-    [STAppManager sharedCoreDataManager];
 }
 
 

@@ -15,7 +15,6 @@
 		74D506C71C0ECCBC004DE9C2 /* STCoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 74D506C51C0ECCBC004DE9C2 /* STCoreDataManager.m */; };
 		74D506CB1C0ECEA0004DE9C2 /* STCoreDataOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 74D506CA1C0ECEA0004DE9C2 /* STCoreDataOperation.m */; };
 		74D506CE1C0F00EE004DE9C2 /* STCoreDataFetchOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 74D506CD1C0F00EE004DE9C2 /* STCoreDataFetchOperation.m */; };
-		BC49BD901BE25F18003ECCE2 /* CSVReaderOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = BC49BD8C1BE25F18003ECCE2 /* CSVReaderOperation.m */; };
 		BC49BD911BE25F18003ECCE2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC49BD8E1BE25F18003ECCE2 /* ViewController.m */; };
 		BC5AE84A1BDF4F1900FCDA39 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BC5AE8491BDF4F1900FCDA39 /* main.m */; };
 		BC5AE84D1BDF4F1900FCDA39 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BC5AE84C1BDF4F1900FCDA39 /* AppDelegate.m */; };
@@ -54,8 +53,6 @@
 		74D506CA1C0ECEA0004DE9C2 /* STCoreDataOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STCoreDataOperation.m; sourceTree = "<group>"; };
 		74D506CC1C0F00EE004DE9C2 /* STCoreDataFetchOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STCoreDataFetchOperation.h; sourceTree = "<group>"; };
 		74D506CD1C0F00EE004DE9C2 /* STCoreDataFetchOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STCoreDataFetchOperation.m; sourceTree = "<group>"; };
-		BC49BD8B1BE25F18003ECCE2 /* CSVReaderOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSVReaderOperation.h; path = files/CSVReaderOperation.h; sourceTree = "<group>"; };
-		BC49BD8C1BE25F18003ECCE2 /* CSVReaderOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSVReaderOperation.m; path = files/CSVReaderOperation.m; sourceTree = "<group>"; };
 		BC49BD8D1BE25F18003ECCE2 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = files/ViewController.h; sourceTree = "<group>"; };
 		BC49BD8E1BE25F18003ECCE2 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = files/ViewController.m; sourceTree = "<group>"; };
 		BC5AE8441BDF4F1900FCDA39 /* CoreData_Multiple_Context.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreData_Multiple_Context.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -91,15 +88,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		7436AAF81C0FFBE900841E0C /* CSVReader */ = {
-			isa = PBXGroup;
-			children = (
-				BC49BD8B1BE25F18003ECCE2 /* CSVReaderOperation.h */,
-				BC49BD8C1BE25F18003ECCE2 /* CSVReaderOperation.m */,
-			);
-			name = CSVReader;
-			sourceTree = "<group>";
-		};
 		74D506C81C0ECCC1004DE9C2 /* CoreDataFiles */ = {
 			isa = PBXGroup;
 			children = (
@@ -143,7 +131,6 @@
 		BC5AE8461BDF4F1900FCDA39 /* CoreData_Multiple_Context */ = {
 			isa = PBXGroup;
 			children = (
-				7436AAF81C0FFBE900841E0C /* CSVReader */,
 				74D506C81C0ECCC1004DE9C2 /* CoreDataFiles */,
 				BC5AE84B1BDF4F1900FCDA39 /* AppDelegate.h */,
 				BC5AE84C1BDF4F1900FCDA39 /* AppDelegate.m */,
@@ -297,7 +284,6 @@
 				BC5AE8501BDF4F1900FCDA39 /* CoreData_Multiple_Context.xcdatamodeld in Sources */,
 				BC5AE84D1BDF4F1900FCDA39 /* AppDelegate.m in Sources */,
 				74734A141C296718000B91BD /* STTestData.m in Sources */,
-				BC49BD901BE25F18003ECCE2 /* CSVReaderOperation.m in Sources */,
 				74D506C61C0ECCBC004DE9C2 /* STCoreDataAddOperation.m in Sources */,
 				BC5AE84A1BDF4F1900FCDA39 /* main.m in Sources */,
 			);

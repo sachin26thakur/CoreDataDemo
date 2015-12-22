@@ -7,7 +7,6 @@
 //
 
 #import "STCoreDataManager.h"
-#import "CSVReaderOperation.h"
 #import "STCoreDataAddOperation.h"
 
 NSString *const CORE_DATA_FILENAME = @"CoreData_Multiple_Context";

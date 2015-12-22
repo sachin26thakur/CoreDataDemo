@@ -1,4 +1,12 @@
 # CoreDataDemo
+#Description: This helper clases motivates to use multiple NSManagedObjectContext as follows:
+
+- Save operation core data use  either parent context or child context based on your need.
+- Fetch opearation on core data use either parent context or child context based on your need
+- This are all operation done with the help of blocks so you will get call back after each opeartion is completed.
+- this opeation execute on background thread, no worry of iOS app UI reponsive.
+-  d
+
 # Usage
  -  To change file name of core data, go to STCoreDataManager class and replace value from CORE_DATA_FILENAME your file name.
  ```sh

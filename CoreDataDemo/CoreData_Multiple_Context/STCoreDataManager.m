@@ -6,21 +6,25 @@
 //  Copyright (c) 2015 Globallogic. All rights reserved.
 //
 
-#import "CoreDataManager.h"
+#import "STCoreDataManager.h"
 #import "CSVReaderOperation.h"
-#import "CoreDataAddOperation.h"
+#import "STCoreDataAddOperation.h"
+
+NSString *const CORE_DATA_FILENAME = @"CoreData_Multiple_Context";
+
+static STCoreDataManager * uniqueInstance;
 
 
-static CoreDataManager * uniqueInstance;
-
-
-@interface CoreDataManager ()
+@interface STCoreDataManager ()
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
+@property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 @property (nonatomic,strong) NSOperationQueue *operationQueue;
+
+- (NSURL *)applicationDocumentsDirectory;
 @end
 
 
-@implementation CoreDataManager
+@implementation STCoreDataManager
 
 @synthesize managedObjectContext = _managedObjectContext;
 @synthesize managedObjectModel = _managedObjectModel;
@@ -31,7 +35,7 @@ static CoreDataManager * uniqueInstance;
 {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        uniqueInstance = [[CoreDataManager alloc]init];
+        uniqueInstance = [[STCoreDataManager alloc]init];
         [uniqueInstance initialize];
     });
     return uniqueInstance;
@@ -48,36 +52,10 @@ static CoreDataManager * uniqueInstance;
 
 
 - (void)initialize{
-    
-    //Intialize CoreData
-    NSString *csvPath = [[NSBundle mainBundle] pathForResource:@"sampleRecords" ofType:@"csv"];
-    ;
-    
-    //read data from csv reader
-    CSVReaderOperation *csvReaderOperation = [[CSVReaderOperation alloc] initWithCSVFilePath:csvPath];
-    [csvReaderOperation setFinishedBlock:^(id obj, NSError *error) {
-        if (error == nil) {
-            [self addRecordInDataBase:obj index:0];
-        }
-    }];
-    
-    [self.operationQueue addOperation:csvReaderOperation];
+    //Intiliazation objects
 }
 
 
-- (void)addRecordInDataBase:(NSArray*)dataArray index:(NSInteger)index{
-    if (index>=[dataArray count]) {
-        return;
-    }
-    NSDictionary *dict = [dataArray objectAtIndex:index++];
-    CoreDataAddOperation *coreDataAddOperation = [[CoreDataAddOperation alloc] initWithContextType:CHILD_CONTEXT_TYPE and:dict];
-    
-    [coreDataAddOperation setFinishedBlock:^(id obj, NSError *error) {
-        [self addRecordInDataBase:dataArray index:index];
-    }];
-    
-    [self.operationQueue addOperation:coreDataAddOperation];
-}
 
 
 
@@ -96,7 +74,7 @@ static CoreDataManager * uniqueInstance;
     if (_managedObjectModel != nil) {
         return _managedObjectModel;
     }
-    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"CoreData_Multiple_Context" withExtension:@"momd"];
+    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:CORE_DATA_FILENAME withExtension:@"momd"];
     _managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
     return _managedObjectModel;
 }
@@ -110,7 +88,10 @@ static CoreDataManager * uniqueInstance;
     // Create the coordinator and store
     
     _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
-    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"CoreData_Multiple_Context.sqlite"];
+    
+    NSString *sqliteFileName = [NSString stringWithFormat:@"%@.sqlite",CORE_DATA_FILENAME];
+    
+    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:sqliteFileName];
     NSError *error = nil;
     NSString *failureReason = @"There was an error creating or loading the application's saved data.";
     if (![_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:&error]) {

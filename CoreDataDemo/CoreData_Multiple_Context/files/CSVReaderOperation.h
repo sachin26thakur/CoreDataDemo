@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "CoreDataManager.h"
+#import "STCoreDataManager.h"
 #import "STOperation.h"
 
 

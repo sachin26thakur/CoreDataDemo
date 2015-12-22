@@ -33,7 +33,7 @@
                                 </constraints>
                                 <items>
                                     <navigationItem id="ZWg-Mc-bmo">
-                                        <barButtonItem key="leftBarButtonItem" title="Touch Me" id="5MW-nA-lBx" userLabel="Touch Me">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="add" id="5MW-nA-lBx" userLabel="Touch Me">
                                             <connections>
                                                 <action selector="onClickSlect:" destination="BYZ-38-t0r" id="YAg-Vb-6Mh"/>
                                             </connections>

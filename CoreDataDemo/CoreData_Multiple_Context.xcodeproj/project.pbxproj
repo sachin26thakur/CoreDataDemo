@@ -8,11 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		039B90E71BE09F9300FBAFD3 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 039B90E61BE09F9300FBAFD3 /* .gitignore */; };
+		74734A131C296718000B91BD /* STTestData+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 74734A101C296718000B91BD /* STTestData+CoreDataProperties.m */; };
+		74734A141C296718000B91BD /* STTestData.m in Sources */ = {isa = PBXBuildFile; fileRef = 74734A121C296718000B91BD /* STTestData.m */; };
 		74D506B61C0DCE6E004DE9C2 /* STOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 74D506B51C0DCE6E004DE9C2 /* STOperation.m */; };
-		74D506C61C0ECCBC004DE9C2 /* CoreDataAddOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 74D506C31C0ECCBC004DE9C2 /* CoreDataAddOperation.m */; };
-		74D506C71C0ECCBC004DE9C2 /* CoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 74D506C51C0ECCBC004DE9C2 /* CoreDataManager.m */; };
-		74D506CB1C0ECEA0004DE9C2 /* CoreDataOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 74D506CA1C0ECEA0004DE9C2 /* CoreDataOperation.m */; };
-		74D506CE1C0F00EE004DE9C2 /* CoreDataFetchOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 74D506CD1C0F00EE004DE9C2 /* CoreDataFetchOperation.m */; };
+		74D506C61C0ECCBC004DE9C2 /* STCoreDataAddOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 74D506C31C0ECCBC004DE9C2 /* STCoreDataAddOperation.m */; };
+		74D506C71C0ECCBC004DE9C2 /* STCoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 74D506C51C0ECCBC004DE9C2 /* STCoreDataManager.m */; };
+		74D506CB1C0ECEA0004DE9C2 /* STCoreDataOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 74D506CA1C0ECEA0004DE9C2 /* STCoreDataOperation.m */; };
+		74D506CE1C0F00EE004DE9C2 /* STCoreDataFetchOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 74D506CD1C0F00EE004DE9C2 /* STCoreDataFetchOperation.m */; };
 		BC49BD901BE25F18003ECCE2 /* CSVReaderOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = BC49BD8C1BE25F18003ECCE2 /* CSVReaderOperation.m */; };
 		BC49BD911BE25F18003ECCE2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC49BD8E1BE25F18003ECCE2 /* ViewController.m */; };
 		BC5AE84A1BDF4F1900FCDA39 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BC5AE8491BDF4F1900FCDA39 /* main.m */; };
@@ -23,7 +25,6 @@
 		BC5AE85B1BDF4F1900FCDA39 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC5AE8591BDF4F1900FCDA39 /* LaunchScreen.xib */; };
 		BC5AE8671BDF4F1900FCDA39 /* CoreData_Multiple_ContextTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BC5AE8661BDF4F1900FCDA39 /* CoreData_Multiple_ContextTests.m */; };
 		BC5AE8751BDF6A0400FCDA39 /* sampleRecords.csv in Resources */ = {isa = PBXBuildFile; fileRef = BC5AE8741BDF6A0400FCDA39 /* sampleRecords.csv */; };
-		BC5AE87E1BDFA72300FCDA39 /* InsurenceData.m in Sources */ = {isa = PBXBuildFile; fileRef = BC5AE87D1BDFA72300FCDA39 /* InsurenceData.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,17 +39,21 @@
 
 /* Begin PBXFileReference section */
 		039B90E61BE09F9300FBAFD3 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		74734A0F1C296718000B91BD /* STTestData+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "STTestData+CoreDataProperties.h"; path = "../STTestData+CoreDataProperties.h"; sourceTree = "<group>"; };
+		74734A101C296718000B91BD /* STTestData+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "STTestData+CoreDataProperties.m"; path = "../STTestData+CoreDataProperties.m"; sourceTree = "<group>"; };
+		74734A111C296718000B91BD /* STTestData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = STTestData.h; path = ../STTestData.h; sourceTree = "<group>"; };
+		74734A121C296718000B91BD /* STTestData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = STTestData.m; path = ../STTestData.m; sourceTree = "<group>"; };
 		74D506B41C0DCE6E004DE9C2 /* STOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STOperation.h; sourceTree = "<group>"; };
 		74D506B51C0DCE6E004DE9C2 /* STOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STOperation.m; sourceTree = "<group>"; };
 		74D506BD1C0ECBC1004DE9C2 /* CoreData_Multiple_Context.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreData_Multiple_Context.pch; sourceTree = "<group>"; };
-		74D506C21C0ECCBC004DE9C2 /* CoreDataAddOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataAddOperation.h; sourceTree = "<group>"; };
-		74D506C31C0ECCBC004DE9C2 /* CoreDataAddOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataAddOperation.m; sourceTree = "<group>"; };
-		74D506C41C0ECCBC004DE9C2 /* CoreDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataManager.h; sourceTree = "<group>"; };
-		74D506C51C0ECCBC004DE9C2 /* CoreDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataManager.m; sourceTree = "<group>"; };
-		74D506C91C0ECEA0004DE9C2 /* CoreDataOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataOperation.h; sourceTree = "<group>"; };
-		74D506CA1C0ECEA0004DE9C2 /* CoreDataOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataOperation.m; sourceTree = "<group>"; };
-		74D506CC1C0F00EE004DE9C2 /* CoreDataFetchOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataFetchOperation.h; sourceTree = "<group>"; };
-		74D506CD1C0F00EE004DE9C2 /* CoreDataFetchOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataFetchOperation.m; sourceTree = "<group>"; };
+		74D506C21C0ECCBC004DE9C2 /* STCoreDataAddOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STCoreDataAddOperation.h; sourceTree = "<group>"; };
+		74D506C31C0ECCBC004DE9C2 /* STCoreDataAddOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STCoreDataAddOperation.m; sourceTree = "<group>"; };
+		74D506C41C0ECCBC004DE9C2 /* STCoreDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STCoreDataManager.h; sourceTree = "<group>"; };
+		74D506C51C0ECCBC004DE9C2 /* STCoreDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STCoreDataManager.m; sourceTree = "<group>"; };
+		74D506C91C0ECEA0004DE9C2 /* STCoreDataOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STCoreDataOperation.h; sourceTree = "<group>"; };
+		74D506CA1C0ECEA0004DE9C2 /* STCoreDataOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STCoreDataOperation.m; sourceTree = "<group>"; };
+		74D506CC1C0F00EE004DE9C2 /* STCoreDataFetchOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STCoreDataFetchOperation.h; sourceTree = "<group>"; };
+		74D506CD1C0F00EE004DE9C2 /* STCoreDataFetchOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STCoreDataFetchOperation.m; sourceTree = "<group>"; };
 		BC49BD8B1BE25F18003ECCE2 /* CSVReaderOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSVReaderOperation.h; path = files/CSVReaderOperation.h; sourceTree = "<group>"; };
 		BC49BD8C1BE25F18003ECCE2 /* CSVReaderOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSVReaderOperation.m; path = files/CSVReaderOperation.m; sourceTree = "<group>"; };
 		BC49BD8D1BE25F18003ECCE2 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = files/ViewController.h; sourceTree = "<group>"; };
@@ -66,8 +71,6 @@
 		BC5AE8651BDF4F1900FCDA39 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BC5AE8661BDF4F1900FCDA39 /* CoreData_Multiple_ContextTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreData_Multiple_ContextTests.m; sourceTree = "<group>"; };
 		BC5AE8741BDF6A0400FCDA39 /* sampleRecords.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sampleRecords.csv; sourceTree = "<group>"; };
-		BC5AE87C1BDFA72300FCDA39 /* InsurenceData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InsurenceData.h; sourceTree = "<group>"; };
-		BC5AE87D1BDFA72300FCDA39 /* InsurenceData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InsurenceData.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,16 +103,20 @@
 		74D506C81C0ECCC1004DE9C2 /* CoreDataFiles */ = {
 			isa = PBXGroup;
 			children = (
-				74D506C91C0ECEA0004DE9C2 /* CoreDataOperation.h */,
-				74D506CA1C0ECEA0004DE9C2 /* CoreDataOperation.m */,
-				74D506C21C0ECCBC004DE9C2 /* CoreDataAddOperation.h */,
-				74D506C31C0ECCBC004DE9C2 /* CoreDataAddOperation.m */,
-				74D506CC1C0F00EE004DE9C2 /* CoreDataFetchOperation.h */,
-				74D506CD1C0F00EE004DE9C2 /* CoreDataFetchOperation.m */,
-				BC5AE87C1BDFA72300FCDA39 /* InsurenceData.h */,
-				BC5AE87D1BDFA72300FCDA39 /* InsurenceData.m */,
-				74D506C41C0ECCBC004DE9C2 /* CoreDataManager.h */,
-				74D506C51C0ECCBC004DE9C2 /* CoreDataManager.m */,
+				74D506B41C0DCE6E004DE9C2 /* STOperation.h */,
+				74D506B51C0DCE6E004DE9C2 /* STOperation.m */,
+				74D506C91C0ECEA0004DE9C2 /* STCoreDataOperation.h */,
+				74D506CA1C0ECEA0004DE9C2 /* STCoreDataOperation.m */,
+				74D506C21C0ECCBC004DE9C2 /* STCoreDataAddOperation.h */,
+				74D506C31C0ECCBC004DE9C2 /* STCoreDataAddOperation.m */,
+				74D506CC1C0F00EE004DE9C2 /* STCoreDataFetchOperation.h */,
+				74D506CD1C0F00EE004DE9C2 /* STCoreDataFetchOperation.m */,
+				74D506C41C0ECCBC004DE9C2 /* STCoreDataManager.h */,
+				74D506C51C0ECCBC004DE9C2 /* STCoreDataManager.m */,
+				74734A0F1C296718000B91BD /* STTestData+CoreDataProperties.h */,
+				74734A101C296718000B91BD /* STTestData+CoreDataProperties.m */,
+				74734A111C296718000B91BD /* STTestData.h */,
+				74734A121C296718000B91BD /* STTestData.m */,
 				BC5AE84E1BDF4F1900FCDA39 /* CoreData_Multiple_Context.xcdatamodeld */,
 			);
 			name = CoreDataFiles;
@@ -138,8 +145,6 @@
 			children = (
 				7436AAF81C0FFBE900841E0C /* CSVReader */,
 				74D506C81C0ECCC1004DE9C2 /* CoreDataFiles */,
-				74D506B41C0DCE6E004DE9C2 /* STOperation.h */,
-				74D506B51C0DCE6E004DE9C2 /* STOperation.m */,
 				BC5AE84B1BDF4F1900FCDA39 /* AppDelegate.h */,
 				BC5AE84C1BDF4F1900FCDA39 /* AppDelegate.m */,
 				BC49BD8D1BE25F18003ECCE2 /* ViewController.h */,
@@ -284,15 +289,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				74D506B61C0DCE6E004DE9C2 /* STOperation.m in Sources */,
-				74D506CE1C0F00EE004DE9C2 /* CoreDataFetchOperation.m in Sources */,
-				74D506C71C0ECCBC004DE9C2 /* CoreDataManager.m in Sources */,
+				74D506CE1C0F00EE004DE9C2 /* STCoreDataFetchOperation.m in Sources */,
+				74D506C71C0ECCBC004DE9C2 /* STCoreDataManager.m in Sources */,
 				BC49BD911BE25F18003ECCE2 /* ViewController.m in Sources */,
-				74D506CB1C0ECEA0004DE9C2 /* CoreDataOperation.m in Sources */,
+				74D506CB1C0ECEA0004DE9C2 /* STCoreDataOperation.m in Sources */,
+				74734A131C296718000B91BD /* STTestData+CoreDataProperties.m in Sources */,
 				BC5AE8501BDF4F1900FCDA39 /* CoreData_Multiple_Context.xcdatamodeld in Sources */,
 				BC5AE84D1BDF4F1900FCDA39 /* AppDelegate.m in Sources */,
+				74734A141C296718000B91BD /* STTestData.m in Sources */,
 				BC49BD901BE25F18003ECCE2 /* CSVReaderOperation.m in Sources */,
-				74D506C61C0ECCBC004DE9C2 /* CoreDataAddOperation.m in Sources */,
-				BC5AE87E1BDFA72300FCDA39 /* InsurenceData.m in Sources */,
+				74D506C61C0ECCBC004DE9C2 /* STCoreDataAddOperation.m in Sources */,
 				BC5AE84A1BDF4F1900FCDA39 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

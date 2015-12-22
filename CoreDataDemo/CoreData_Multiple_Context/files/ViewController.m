@@ -7,21 +7,17 @@
 //
 
 #import "ViewController.h"
-#import "CoreDataManager.h"
+#import "STCoreDataManager.h"
 #import "CSVReaderOperation.h"
+#import "STCoreDataFetchOperation.h"
+#import "STCoreDataAddOperation.h"
 
-#import "CoreDataFetchOperation.h"
-#import "CoreDataAddOperation.h"
+
+
 
 
 @interface ViewController ()
 {
-
-    NSArray *allRecords;
-    NSMutableArray *selectedRecordsIndexpath;
-    NSMutableArray  *selectedRecordsID;
-    BOOL keepGoing;
-    NSTimer *timer;
 }
 
 
@@ -35,13 +31,14 @@
     [super viewDidLoad];
 
     self.naviBar.backgroundColor=[UIColor blackColor];
-    selectedRecordsIndexpath = [[NSMutableArray alloc]init];
-    selectedRecordsID = [[NSMutableArray alloc]init];
+    
+    NSSortDescriptor *sort = [[NSSortDescriptor alloc]
+                              initWithKey:@"name" ascending:YES];
     
     
     //Fetch Operation
+    STCoreDataFetchOperation *fetchOperation = [[STCoreDataFetchOperation alloc] initWithContextType:PARENT_CONTEXT_TYPE Predicate:nil andSortDescriptor:sort forEntityName:STTestDataEntity];
     
-    CoreDataFetchOperation *fetchOperation = [[CoreDataFetchOperation alloc] initWithContextType:PARENT_CONTEXT_TYPE];
     
     [fetchOperation setFinishedBlock:^(id obj, NSError *error) {
         self.fetchResultController = (NSFetchedResultsController*)obj;
@@ -49,11 +46,7 @@
         [self.tableView reloadData];
     }];
     
-    [[CoreDataManager sharedCoreDataManager] resumeOperation:fetchOperation];
-    
-    
-    
-    //Add opeation
+    [[STCoreDataManager sharedCoreDataManager] resumeOperation:fetchOperation];
     
     
 }
@@ -76,13 +69,9 @@
 }
 
 
-- (BOOL)isSelectedRow:(NSString*)iD{
-    return [selectedRecordsID containsObject:iD];
-}
-
-
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
     static NSString *identifier=@"Cell";
     
     UITableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:identifier];
@@ -90,16 +79,8 @@
         cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     }
 
-    InsurenceData *obj=[self.fetchResultController objectAtIndexPath:indexPath];
-    cell.textLabel.text=obj.chiefName;
-
-    
-    if([self isSelectedRow:obj.unitID]){
-        cell.accessoryType = UITableViewCellAccessoryCheckmark;
-    }else{
-        cell.accessoryType = UITableViewCellAccessoryNone;
-    }
-
+    STTestData *obj=[self.fetchResultController objectAtIndexPath:indexPath];
+    cell.textLabel.text=obj.name;
     
     return cell;
 }
@@ -134,56 +115,40 @@
 
 - (IBAction)onClickSlect:(id)sender {
     
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Add Item" message:nil preferredStyle:UIAlertControllerStyleAlert];
     
+        UIAlertAction *alertAction = [UIAlertAction actionWithTitle:@"Submit" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        
+        if (alertController)
+        {
+            UITextField *idTextField = alertController.textFields.firstObject;
+            UITextField *nameTextField = alertController.textFields.lastObject;
+            NSDictionary *userDict = @{@"uniqueID":idTextField.text,@"name":nameTextField.text};
+            STCoreDataAddOperation *insertOperation = [[STCoreDataAddOperation alloc] initWithContextType:CHILD_CONTEXT_TYPE EntityName:STTestDataEntity and:userDict];
+            [insertOperation resume];
+            [insertOperation setFinishedBlock:^(id obj, NSError *error) {
+                NSLog(@"Added sucessfully");
+            }];
+        }
+        
+    }];
     
-//    NSArray *visibleRows = [self.tableView indexPathsForVisibleRows];
-//    
-//   
-//    for (NSIndexPath *idx in visibleRows) {
-//    
-//        InsurenceData *obj=nil;
-//        
-//        if ([self isSelectedRow:obj.unitID]) {
-//            continue;
-//        }
-//        
-//
-//        [selectedRecordsID addObject:obj.unitID];
-//        
-//        UITableViewCell *cell=[self.tableView cellForRowAtIndexPath:idx];
-//        if(cell.accessoryType==UITableViewCellAccessoryNone)
-//        {
-//           cell.accessoryType = UITableViewCellAccessoryCheckmark;
-//        }
-//        
-//    }
-}
-
-- (IBAction)onClickDesselect:(id)sender {
+    [alertController addAction:alertAction];
     
-//    NSArray *visibleRows = [self.tableView indexPathsForVisibleRows];
-//    
-//    for (NSIndexPath *idx in visibleRows)
-//    {
-//        
-//        
-//    
-//        UITableViewCell *cell=[self.tableView cellForRowAtIndexPath:idx];
-//        InsurenceData *obj=nil;
-//        if ([selectedRecordsID containsObject:obj.unitID])
-//        {
-//            
-//            if(cell.accessoryType==UITableViewCellAccessoryCheckmark)
-//            {
-//                cell.accessoryType = UITableViewCellAccessoryNone;
-//            }
-//            [selectedRecordsID removeObject:obj.unitID];
-//            
-//        }
-//        
-//        
-//    }
+    [alertController addTextFieldWithConfigurationHandler:^(UITextField *textField)
+     {
+         textField.placeholder = [NSString stringWithFormat:@"%d",[[self.fetchResultController fetchedObjects] count]];
+         textField.userInteractionEnabled = NO;
+     }];
     
+    [alertController addTextFieldWithConfigurationHandler:^(UITextField *textField)
+     {
+         textField.placeholder = @"name";
+     }];
+    
+    [self presentViewController:alertController animated:YES completion:^{
+        
+    }];
 }
 
 @end

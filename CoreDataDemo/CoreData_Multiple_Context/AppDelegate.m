@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "CoreDataManager.h"
+#import "STCoreDataManager.h"
 
 @interface AppDelegate ()
 

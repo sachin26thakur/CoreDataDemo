@@ -7,7 +7,7 @@
 //
 
 #import "STOperation.h"
-#import "CoreDataManager.h"
+#import "STCoreDataManager.h"
 
 #import <CoreData/CoreData.h>
 
@@ -19,12 +19,16 @@ typedef enum : NSUInteger {
 } ManageObjectContextType;
 
 
-@interface CoreDataOperation : STOperation
-- (instancetype)initWithContextType:(ManageObjectContextType)contextType;
+@interface STCoreDataOperation : STOperation
+
+@property (nonatomic,strong) NSString *entityName;
+
+- (instancetype)initWithContextType:(ManageObjectContextType)contextType andEntityName:(NSString*)entityName;
+
 - (NSManagedObjectContext*)managedObjectContext;
--(BOOL)isRecordAlreadyExist:(NSString*)Id;
+
 - (void)saveContext:(FinishedBlock)finishBlock;
 
-
+- (void)resume;
 
 @end

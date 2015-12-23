@@ -45,7 +45,28 @@
         [self.tableView reloadData];
     }];
     
-    [[STCoreDataManager sharedCoreDataManager] resumeOperation:fetchOperation];
+    [fetchOperation resume];
+    
+    
+    
+    
+    
+    //Save operation
+    NSDictionary *userDict = @{@"uniqueID":@"1234",@"name":@"sachin"};
+    STCoreDataAddOperation *insertOperation = [[STCoreDataAddOperation alloc] initWithContextType:CHILD_CONTEXT_TYPE EntityName:STTestDataEntity and:userDict];
+    [insertOperation resume];
+    [insertOperation setFinishedBlock:^(id obj, NSError *error) {
+        NSLog(@"Added sucessfully");
+    }];
+
+    
+    
+    
+    
+    
+    
+    
+    
     
     
 }

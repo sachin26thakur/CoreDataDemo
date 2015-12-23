@@ -14,6 +14,10 @@
 
 #define STTestDataEntity @"STTestData"
 
+
+/**
+ *  Please change name of core data file name as your need
+ */
 extern NSString *const CORE_DATA_FILENAME;
 
 

@@ -23,7 +23,6 @@
 		BC5AE8581BDF4F1900FCDA39 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC5AE8571BDF4F1900FCDA39 /* Images.xcassets */; };
 		BC5AE85B1BDF4F1900FCDA39 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC5AE8591BDF4F1900FCDA39 /* LaunchScreen.xib */; };
 		BC5AE8671BDF4F1900FCDA39 /* CoreData_Multiple_ContextTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BC5AE8661BDF4F1900FCDA39 /* CoreData_Multiple_ContextTests.m */; };
-		BC5AE8751BDF6A0400FCDA39 /* sampleRecords.csv in Resources */ = {isa = PBXBuildFile; fileRef = BC5AE8741BDF6A0400FCDA39 /* sampleRecords.csv */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,7 +66,6 @@
 		BC5AE8601BDF4F1900FCDA39 /* CoreData_Multiple_ContextTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoreData_Multiple_ContextTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC5AE8651BDF4F1900FCDA39 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BC5AE8661BDF4F1900FCDA39 /* CoreData_Multiple_ContextTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreData_Multiple_ContextTests.m; sourceTree = "<group>"; };
-		BC5AE8741BDF6A0400FCDA39 /* sampleRecords.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sampleRecords.csv; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,7 +146,6 @@
 		BC5AE8471BDF4F1900FCDA39 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				BC5AE8741BDF6A0400FCDA39 /* sampleRecords.csv */,
 				BC5AE8481BDF4F1900FCDA39 /* Info.plist */,
 				BC5AE8491BDF4F1900FCDA39 /* main.m */,
 				74D506BD1C0ECBC1004DE9C2 /* CoreData_Multiple_Context.pch */,
@@ -255,7 +252,6 @@
 			files = (
 				039B90E71BE09F9300FBAFD3 /* .gitignore in Resources */,
 				BC5AE8561BDF4F1900FCDA39 /* Main.storyboard in Resources */,
-				BC5AE8751BDF6A0400FCDA39 /* sampleRecords.csv in Resources */,
 				BC5AE85B1BDF4F1900FCDA39 /* LaunchScreen.xib in Resources */,
 				BC5AE8581BDF4F1900FCDA39 /* Images.xcassets in Resources */,
 			);

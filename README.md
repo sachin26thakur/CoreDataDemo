@@ -1,4 +1,4 @@
-# CoreDataDemo
+# Multi Context Core Data Example
 #Description: This helper clases motivates to use multiple NSManagedObjectContext as follows:
 
 - Save operation core data use  either parent context or child context based on your need.
